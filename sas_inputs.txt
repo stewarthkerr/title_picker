@@ -1,0 +1,1356 @@
+data REDCAP; %let _EFIERR_ = 0;
+infile "P:\RMT\Projects\6332_Title Picker\SAS\title_picker_data.csv" delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ; 
+	informat record_id $500. ;
+	informat redcap_survey_identifier $500. ;
+	informat title_picker_timestamp anydtdte30. ;
+	informat name_requester $500. ;
+	informat request_email $500. ;
+	informat unit best32. ;
+	informat medicine_div best32. ;
+	informat unit_specify $500. ;
+	informat man_title $500. ;
+	informat man_fname $500. ;
+	informat man_lname $500. ;
+	informat nursing_degree best32. ;
+	informat nursing_other $500. ;
+	informat type_position best32. ;
+	informat position_howmany best32. ;
+	informat reclass_pn best32. ;
+	informat emp_name $500. ;
+	informat uid_emp $500. ;
+	informat reclass_vp best32. ;
+	informat resp_progport best32. ;
+	informat progport_desc $5000. ;
+	informat perc_port best32. ;
+	informat progport1_infra best32. ;
+	informat progport2_progport best32. ;
+	informat progport3_lias best32. ;
+	informat progport_number $500. ;
+	informat progport_staff $500. ;
+	informat progport_liason $500. ;
+	informat o1_contracts best32. ;
+	informat o2_fda best32. ;
+	informat o3_regpp best32. ;
+	informat o4_international best32. ;
+	informat o5_ip best32. ;
+	informat o6_monaudit best32. ;
+	informat o7_partdoc best32. ;
+	informat o8_retention best32. ;
+	informat o9_recruitment best32. ;
+	informat o10_screen best32. ;
+	informat o11_sop best32. ;
+	informat o12_specimen best32. ;
+	informat o13_studydoc best32. ;
+	informat o14_visits best32. ;
+	informat o15_meetings best32. ;
+	informat e1_ae best32. ;
+	informat e2_consent best32. ;
+	informat e3_devconsentplan best32. ;
+	informat e4_irb best32. ;
+	informat e5_sponregreport best32. ;
+	informat d1_datacollect best32. ;
+	informat d2_qa best32. ;
+	informat d3_security best32. ;
+	informat d4_dataflow best32. ;
+	informat d5_techinno best32. ;
+	informat sc1_fundprop best32. ;
+	informat sc2_litreview best32. ;
+	informat sc3_protocol best32. ;
+	informat sc4_resdesign best32. ;
+	informat sc5_scholarworks best32. ;
+	informat ssm1_visits best32. ;
+	informat ssm2_electronic best32. ;
+	informat ssm3_feasibility best32. ;
+	informat ssm4_resources best32. ;
+	informat ssm5_risk best32. ;
+	informat ssm6_oppplans best32. ;
+	informat ssm7_closeout best32. ;
+	informat l1_prodev best32. ;
+	informat l2_externalaware best32. ;
+	informat l3_orgagility best32. ;
+	informat l4_adapt best32. ;
+	informat l5_sme best32. ;
+	informat l6_teamwork best32. ;
+	informat resp_clinical best32. ;
+	informat abul_admin best32. ;
+	informat adult_med best32. ;
+	informat ped_med best32. ;
+	informat or_med best32. ;
+	informat blood_admin best32. ;
+	informat peripheral_iv best32. ;
+	informat alaris_pump best32. ;
+	informat blood_draw best32. ;
+	informat external_genital best32. ;
+	informat vaginal best32. ;
+	informat fetal_monitor best32. ;
+	informat adult_chemo best32. ;
+	informat adult_bone_marrow best32. ;
+	informat adult_dys best32. ;
+	informat basic_dys best32. ;
+	informat vesoactive best32. ;
+	informat other_clinical_res best32. ;
+	informat clinical_desc $5000. ;
+	informat toprespon_1 best32. ;
+	informat toprespon_2 best32. ;
+	informat toprespon_3 best32. ;
+	informat toprespon_4 best32. ;
+	informat toprespon_5 best32. ;
+	informat participant_contact best32. ;
+	informat research_type $5000. ;
+	informat special_skills $5000. ;
+	informat emp_comm $5000. ;
+	informat oth_comment $5000. ;
+	informat title_picker_complete best32. ;
+	informat title_picker_automat_v_0 best32. ;
+	informat title_picker_results_timestamp $500. ;
+	informat suggested_title best32. ;
+	informat job_code best32. ;
+	informat other_title $500. ;
+	informat other_job_code $500. ;
+	informat mapper_1 best32. ;
+	informat other_mapper $500. ;
+	informat mapper_2 best32. ;
+	informat other_mapper2 $500. ;
+	informat contact_date yymmdd10. ;
+	informat crpwg_contact best32. ;
+	informat other_crpwg_contact $500. ;
+	informat udid1 best32. ;
+	informat position_n1 best32. ;
+	informat udid2 best32. ;
+	informat position_n2 best32. ;
+	informat udid3 best32. ;
+	informat position_n3 best32. ;
+	informat udid4 best32. ;
+	informat position_n4 best32. ;
+	informat udid5 best32. ;
+	informat position_n5 best32. ;
+	informat udid6 best32. ;
+	informat position_n6 best32. ;
+	informat notes $5000. ;
+	informat title_picker_results_complete best32. ;
+	informat rpl_c1 best32. ;
+	informat rpl_c2 best32. ;
+	informat ly_1 best32. ;
+	informat ly_2 best32. ;
+	informat ly_3 best32. ;
+	informat ly_4 best32. ;
+	informat ly_5 best32. ;
+	informat ly_6 best32. ;
+	informat lv_1 best32. ;
+	informat lv_2 best32. ;
+	informat lv_3 best32. ;
+	informat lv_4 best32. ;
+	informat lv_5 best32. ;
+	informat lv_6 best32. ;
+	informat l_average best32. ;
+	informat oy_1 best32. ;
+	informat oy_2 best32. ;
+	informat oy_3 best32. ;
+	informat oy_4 best32. ;
+	informat oy_5 best32. ;
+	informat oy_6 best32. ;
+	informat oy_7 best32. ;
+	informat oy_8 best32. ;
+	informat oy_9 best32. ;
+	informat oy_10 best32. ;
+	informat oy_11 best32. ;
+	informat oy_12 best32. ;
+	informat oy_13 best32. ;
+	informat oy_14 best32. ;
+	informat oy_15 best32. ;
+	informat ov_1 best32. ;
+	informat ov_2 best32. ;
+	informat ov_3 best32. ;
+	informat ov_4 best32. ;
+	informat ov_5 best32. ;
+	informat ov_6 best32. ;
+	informat ov_7 best32. ;
+	informat ov_8 best32. ;
+	informat ov_9 best32. ;
+	informat ov_10 best32. ;
+	informat ov_11 best32. ;
+	informat ov_12 best32. ;
+	informat ov_13 best32. ;
+	informat ov_14 best32. ;
+	informat ov_15 best32. ;
+	informat o_average best32. ;
+	informat ey_1 best32. ;
+	informat ey_2 best32. ;
+	informat ey_3 best32. ;
+	informat ey_4 best32. ;
+	informat ey_5 best32. ;
+	informat ev_1 best32. ;
+	informat ev_2 best32. ;
+	informat ev_3 best32. ;
+	informat ev_4 best32. ;
+	informat ev_5 best32. ;
+	informat e_average best32. ;
+	informat dy_1 best32. ;
+	informat dy_2 best32. ;
+	informat dy_3 best32. ;
+	informat dy_4 best32. ;
+	informat dy_5 best32. ;
+	informat dv_1 best32. ;
+	informat dv_2 best32. ;
+	informat dv_3 best32. ;
+	informat dv_4 best32. ;
+	informat dv_5 best32. ;
+	informat d_average best32. ;
+	informat scy_1 best32. ;
+	informat scy_2 best32. ;
+	informat scy_3 best32. ;
+	informat scy_4 best32. ;
+	informat scy_5 best32. ;
+	informat scv_1 best32. ;
+	informat scv_2 best32. ;
+	informat scv_3 best32. ;
+	informat scv_4 best32. ;
+	informat scv_5 best32. ;
+	informat sc_average best32. ;
+	informat ssmy_1 best32. ;
+	informat ssmy_2 best32. ;
+	informat ssmy_3 best32. ;
+	informat ssmy_4 best32. ;
+	informat ssmy_5 best32. ;
+	informat ssmy_6 best32. ;
+	informat ssmy_7 best32. ;
+	informat ssmv_1 best32. ;
+	informat ssmv_2 best32. ;
+	informat ssmv_3 best32. ;
+	informat ssmv_4 best32. ;
+	informat ssmv_5 best32. ;
+	informat ssmv_6 best32. ;
+	informat ssmv_7 best32. ;
+	informat ssm_average best32. ;
+	informat competency_average best32. ;
+	informat crs best32. ;
+	informat crssr best32. ;
+	informat crc best32. ;
+	informat crcsr best32. ;
+	informat crnc best32. ;
+	informat crncsr best32. ;
+	informat reg best32. ;
+	informat regsr best32. ;
+	informat rpl best32. ;
+	informat rplsr best32. ;
+	informat sug_pos best32. ;
+	informat progportv1 best32. ;
+	informat progportv2 best32. ;
+	informat progportv3 best32. ;
+	informat calculations_complete best32. ;
+
+	format record_id $500. ;
+	format redcap_survey_identifier $500. ;
+	format title_picker_timestamp mmddyy10.;
+	format name_requester $500. ;
+	format request_email $500. ;
+	format unit best12. ;
+	format medicine_div best12. ;
+	format unit_specify $500. ;
+	format man_title $500. ;
+	format man_fname $500. ;
+	format man_lname $500. ;
+	format nursing_degree best12. ;
+	format nursing_other $500. ;
+	format type_position best12. ;
+	format position_howmany best12. ;
+	format reclass_pn best12. ;
+	format emp_name $500. ;
+	format uid_emp $500. ;
+	format reclass_vp best12. ;
+	format resp_progport best12. ;
+	format progport_desc $5000. ;
+	format perc_port best12. ;
+	format progport1_infra best12. ;
+	format progport2_progport best12. ;
+	format progport3_lias best12. ;
+	format progport_number $500. ;
+	format progport_staff $500. ;
+	format progport_liason $500. ;
+	format o1_contracts best12. ;
+	format o2_fda best12. ;
+	format o3_regpp best12. ;
+	format o4_international best12. ;
+	format o5_ip best12. ;
+	format o6_monaudit best12. ;
+	format o7_partdoc best12. ;
+	format o8_retention best12. ;
+	format o9_recruitment best12. ;
+	format o10_screen best12. ;
+	format o11_sop best12. ;
+	format o12_specimen best12. ;
+	format o13_studydoc best12. ;
+	format o14_visits best12. ;
+	format o15_meetings best12. ;
+	format e1_ae best12. ;
+	format e2_consent best12. ;
+	format e3_devconsentplan best12. ;
+	format e4_irb best12. ;
+	format e5_sponregreport best12. ;
+	format d1_datacollect best12. ;
+	format d2_qa best12. ;
+	format d3_security best12. ;
+	format d4_dataflow best12. ;
+	format d5_techinno best12. ;
+	format sc1_fundprop best12. ;
+	format sc2_litreview best12. ;
+	format sc3_protocol best12. ;
+	format sc4_resdesign best12. ;
+	format sc5_scholarworks best12. ;
+	format ssm1_visits best12. ;
+	format ssm2_electronic best12. ;
+	format ssm3_feasibility best12. ;
+	format ssm4_resources best12. ;
+	format ssm5_risk best12. ;
+	format ssm6_oppplans best12. ;
+	format ssm7_closeout best12. ;
+	format l1_prodev best12. ;
+	format l2_externalaware best12. ;
+	format l3_orgagility best12. ;
+	format l4_adapt best12. ;
+	format l5_sme best12. ;
+	format l6_teamwork best12. ;
+	format resp_clinical best12. ;
+	format abul_admin best12. ;
+	format adult_med best12. ;
+	format ped_med best12. ;
+	format or_med best12. ;
+	format blood_admin best12. ;
+	format peripheral_iv best12. ;
+	format alaris_pump best12. ;
+	format blood_draw best12. ;
+	format external_genital best12. ;
+	format vaginal best12. ;
+	format fetal_monitor best12. ;
+	format adult_chemo best12. ;
+	format adult_bone_marrow best12. ;
+	format adult_dys best12. ;
+	format basic_dys best12. ;
+	format vesoactive best12. ;
+	format other_clinical_res best12. ;
+	format clinical_desc $5000. ;
+	format toprespon_1 best12. ;
+	format toprespon_2 best12. ;
+	format toprespon_3 best12. ;
+	format toprespon_4 best12. ;
+	format toprespon_5 best12. ;
+	format participant_contact best12. ;
+	format research_type $5000. ;
+	format special_skills $5000. ;
+	format emp_comm $5000. ;
+	format oth_comment $5000. ;
+	format title_picker_complete best12. ;
+	format title_picker_automat_v_0 best12. ;
+	format title_picker_results_timestamp $500. ;
+	format suggested_title best12. ;
+	format job_code best12. ;
+	format other_title $500. ;
+	format other_job_code $500. ;
+	format mapper_1 best12. ;
+	format other_mapper $500. ;
+	format mapper_2 best12. ;
+	format other_mapper2 $500. ;
+	format contact_date yymmdd10. ;
+	format crpwg_contact best12. ;
+	format other_crpwg_contact $500. ;
+	format udid1 best12. ;
+	format position_n1 best12. ;
+	format udid2 best12. ;
+	format position_n2 best12. ;
+	format udid3 best12. ;
+	format position_n3 best12. ;
+	format udid4 best12. ;
+	format position_n4 best12. ;
+	format udid5 best12. ;
+	format position_n5 best12. ;
+	format udid6 best12. ;
+	format position_n6 best12. ;
+	format notes $5000. ;
+	format title_picker_results_complete best12. ;
+	format rpl_c1 best12. ;
+	format rpl_c2 best12. ;
+	format ly_1 best12. ;
+	format ly_2 best12. ;
+	format ly_3 best12. ;
+	format ly_4 best12. ;
+	format ly_5 best12. ;
+	format ly_6 best12. ;
+	format lv_1 best12. ;
+	format lv_2 best12. ;
+	format lv_3 best12. ;
+	format lv_4 best12. ;
+	format lv_5 best12. ;
+	format lv_6 best12. ;
+	format l_average best12. ;
+	format oy_1 best12. ;
+	format oy_2 best12. ;
+	format oy_3 best12. ;
+	format oy_4 best12. ;
+	format oy_5 best12. ;
+	format oy_6 best12. ;
+	format oy_7 best12. ;
+	format oy_8 best12. ;
+	format oy_9 best12. ;
+	format oy_10 best12. ;
+	format oy_11 best12. ;
+	format oy_12 best12. ;
+	format oy_13 best12. ;
+	format oy_14 best12. ;
+	format oy_15 best12. ;
+	format ov_1 best12. ;
+	format ov_2 best12. ;
+	format ov_3 best12. ;
+	format ov_4 best12. ;
+	format ov_5 best12. ;
+	format ov_6 best12. ;
+	format ov_7 best12. ;
+	format ov_8 best12. ;
+	format ov_9 best12. ;
+	format ov_10 best12. ;
+	format ov_11 best12. ;
+	format ov_12 best12. ;
+	format ov_13 best12. ;
+	format ov_14 best12. ;
+	format ov_15 best12. ;
+	format o_average best12. ;
+	format ey_1 best12. ;
+	format ey_2 best12. ;
+	format ey_3 best12. ;
+	format ey_4 best12. ;
+	format ey_5 best12. ;
+	format ev_1 best12. ;
+	format ev_2 best12. ;
+	format ev_3 best12. ;
+	format ev_4 best12. ;
+	format ev_5 best12. ;
+	format e_average best12. ;
+	format dy_1 best12. ;
+	format dy_2 best12. ;
+	format dy_3 best12. ;
+	format dy_4 best12. ;
+	format dy_5 best12. ;
+	format dv_1 best12. ;
+	format dv_2 best12. ;
+	format dv_3 best12. ;
+	format dv_4 best12. ;
+	format dv_5 best12. ;
+	format d_average best12. ;
+	format scy_1 best12. ;
+	format scy_2 best12. ;
+	format scy_3 best12. ;
+	format scy_4 best12. ;
+	format scy_5 best12. ;
+	format scv_1 best12. ;
+	format scv_2 best12. ;
+	format scv_3 best12. ;
+	format scv_4 best12. ;
+	format scv_5 best12. ;
+	format sc_average best12. ;
+	format ssmy_1 best12. ;
+	format ssmy_2 best12. ;
+	format ssmy_3 best12. ;
+	format ssmy_4 best12. ;
+	format ssmy_5 best12. ;
+	format ssmy_6 best12. ;
+	format ssmy_7 best12. ;
+	format ssmv_1 best12. ;
+	format ssmv_2 best12. ;
+	format ssmv_3 best12. ;
+	format ssmv_4 best12. ;
+	format ssmv_5 best12. ;
+	format ssmv_6 best12. ;
+	format ssmv_7 best12. ;
+	format ssm_average best12. ;
+	format competency_average best12. ;
+	format crs best12. ;
+	format crssr best12. ;
+	format crc best12. ;
+	format crcsr best12. ;
+	format crnc best12. ;
+	format crncsr best12. ;
+	format reg best12. ;
+	format regsr best12. ;
+	format rpl best12. ;
+	format rplsr best12. ;
+	format sug_pos best12. ;
+	format progportv1 best12. ;
+	format progportv2 best12. ;
+	format progportv3 best12. ;
+	format calculations_complete best12. ;
+
+input
+		record_id $
+		redcap_survey_identifier $
+		title_picker_timestamp 
+		name_requester $
+		request_email $
+		unit
+		medicine_div
+		unit_specify $
+		man_title $
+		man_fname $
+		man_lname $
+		nursing_degree
+		nursing_other $
+		type_position
+		position_howmany
+		reclass_pn
+		emp_name $
+		uid_emp $
+		reclass_vp
+		resp_progport
+		progport_desc $
+		perc_port
+		progport1_infra
+		progport2_progport
+		progport3_lias
+		progport_number $
+		progport_staff $
+		progport_liason $
+		o1_contracts
+		o2_fda
+		o3_regpp
+		o4_international
+		o5_ip
+		o6_monaudit
+		o7_partdoc
+		o8_retention
+		o9_recruitment
+		o10_screen
+		o11_sop
+		o12_specimen
+		o13_studydoc
+		o14_visits
+		o15_meetings
+		e1_ae
+		e2_consent
+		e3_devconsentplan
+		e4_irb
+		e5_sponregreport
+		d1_datacollect
+		d2_qa
+		d3_security
+		d4_dataflow
+		d5_techinno
+		sc1_fundprop
+		sc2_litreview
+		sc3_protocol
+		sc4_resdesign
+		sc5_scholarworks
+		ssm1_visits
+		ssm2_electronic
+		ssm3_feasibility
+		ssm4_resources
+		ssm5_risk
+		ssm6_oppplans
+		ssm7_closeout
+		l1_prodev
+		l2_externalaware
+		l3_orgagility
+		l4_adapt
+		l5_sme
+		l6_teamwork
+		resp_clinical
+		abul_admin
+		adult_med
+		ped_med
+		or_med
+		blood_admin
+		peripheral_iv
+		alaris_pump
+		blood_draw
+		external_genital
+		vaginal
+		fetal_monitor
+		adult_chemo
+		adult_bone_marrow
+		adult_dys
+		basic_dys
+		vesoactive
+		other_clinical_res
+		clinical_desc $
+		toprespon_1
+		toprespon_2
+		toprespon_3
+		toprespon_4
+		toprespon_5
+		participant_contact
+		research_type $
+		special_skills $
+		emp_comm $
+		oth_comment $
+		title_picker_complete
+		title_picker_automat_v_0
+		title_picker_results_timestamp $
+		suggested_title
+		job_code
+		other_title $
+		other_job_code $
+		mapper_1
+		other_mapper $
+		mapper_2
+		other_mapper2 $
+		contact_date
+		crpwg_contact
+		other_crpwg_contact $
+		udid1
+		position_n1
+		udid2
+		position_n2
+		udid3
+		position_n3
+		udid4
+		position_n4
+		udid5
+		position_n5
+		udid6
+		position_n6
+		notes $
+		title_picker_results_complete
+		rpl_c1
+		rpl_c2
+		ly_1
+		ly_2
+		ly_3
+		ly_4
+		ly_5
+		ly_6
+		lv_1
+		lv_2
+		lv_3
+		lv_4
+		lv_5
+		lv_6
+		l_average
+		oy_1
+		oy_2
+		oy_3
+		oy_4
+		oy_5
+		oy_6
+		oy_7
+		oy_8
+		oy_9
+		oy_10
+		oy_11
+		oy_12
+		oy_13
+		oy_14
+		oy_15
+		ov_1
+		ov_2
+		ov_3
+		ov_4
+		ov_5
+		ov_6
+		ov_7
+		ov_8
+		ov_9
+		ov_10
+		ov_11
+		ov_12
+		ov_13
+		ov_14
+		ov_15
+		o_average
+		ey_1
+		ey_2
+		ey_3
+		ey_4
+		ey_5
+		ev_1
+		ev_2
+		ev_3
+		ev_4
+		ev_5
+		e_average
+		dy_1
+		dy_2
+		dy_3
+		dy_4
+		dy_5
+		dv_1
+		dv_2
+		dv_3
+		dv_4
+		dv_5
+		d_average
+		scy_1
+		scy_2
+		scy_3
+		scy_4
+		scy_5
+		scv_1
+		scv_2
+		scv_3
+		scv_4
+		scv_5
+		sc_average
+		ssmy_1
+		ssmy_2
+		ssmy_3
+		ssmy_4
+		ssmy_5
+		ssmy_6
+		ssmy_7
+		ssmv_1
+		ssmv_2
+		ssmv_3
+		ssmv_4
+		ssmv_5
+		ssmv_6
+		ssmv_7
+		ssm_average
+		competency_average
+		crs
+		crssr
+		crc
+		crcsr
+		crnc
+		crncsr
+		reg
+		regsr
+		rpl
+		rplsr
+		sug_pos
+		progportv1
+		progportv2
+		progportv3
+		calculations_complete
+;
+if _ERROR_ then call symput('_EFIERR_',"1");
+run;
+
+data redcap;
+	set redcap;
+	label record_id='Record ID';
+	label redcap_survey_identifier='Survey Identifier';
+	label title_picker_timestamp='Survey Timestamp';
+	label name_requester='Requester name';
+	label request_email='Requester email';
+	label unit='Employee Unit/Department';
+	label medicine_div='Division';
+	label unit_specify='Unit/department specify';
+	label man_title='Title of person who will manage position';
+	label man_fname='First name of person who will manage position';
+	label man_lname='Last name of person who will manage position';
+	label nursing_degree='Nursing degree held by manager';
+	label nursing_other='Nursing degree - specify';
+	label type_position='Type of position';
+	label position_howmany='How many positions would you like to open under this record number? ';
+	label reclass_pn='Position Number';
+	label emp_name='Name of Employee';
+	label uid_emp='UID of Employee';
+	label reclass_vp='Position Number';
+	label resp_progport='Will the position require research program or shared resource management or development?   1) determining long-range goals or visions 2) determining and managing flow of operations 3) obtaining or managing research program or network funds 4) representing the institution at large events (this does not include representing individual studies).';
+	label progport_desc='Describe the planned research program or shared resource responsibilities.';
+	label perc_port='What percentage of time will be spent in research program or shared resource responsibilities?';
+	label progport1_infra='Research Program or Shared Resource Development and Management: Infrastructure Planning and Management';
+	label progport2_progport='Research Program or Shared Resource Development and Management: Program and Portfolio Oversight and Management ';
+	label progport3_lias='Research Program or Shared Resource Development and Management: Program Liaison and Communication';
+	label progport_number='Briefly describe briefly the number and type of research studies or programs this person will manage.';
+	label progport_staff='Describe the number and type of staff managed, the size of budget(s), and resources associated with research program or shared resource .';
+	label progport_liason='If applicable, describe the ways in which this position will represent the research program or shared resource  at the institutional level and/or external to Duke.';
+	label o1_contracts='Research Operations: Contracts and Agreements';
+	label o2_fda='Research Operations: FDA Regulatory Submissions';
+	label o3_regpp='Research Operations: Institutional Regulatory Policies and Processes';
+	label o4_international='Research Operations: International Regulatory Documentation';
+	label o5_ip='Research Operations: Investigational Products';
+	label o6_monaudit='Research Operations: Monitoring and Audits ';
+	label o7_partdoc='Research Operations: Participant Level Documentation ';
+	label o8_retention='Research Operations: Participant Retention';
+	label o9_recruitment='Research Operations: Recruitment';
+	label o10_screen='Research Operations: Screening';
+	label o11_sop='Research Operations: SOPs';
+	label o12_specimen='Research Operations: Specimen Management';
+	label o13_studydoc='Research Operations:Study Level Documentation';
+	label o14_visits='Research Operations: Study Visits';
+	label o15_meetings='Research Operations: Team Meetings ';
+	label e1_ae='Safety and Ethics: Adverse Events';
+	label e2_consent='Safety and Ethics: Consent Procedures ';
+	label e3_devconsentplan='Safety and Ethics: Development of Informed Consent Documentation and Plan';
+	label e4_irb='Safety and Ethics: Navigating the ethics review process (IRB)';
+	label e5_sponregreport='Safety and Ethics: Sponsor/Regulatory Reporting';
+	label d1_datacollect='Data: Data Collection and Entry';
+	label d2_qa='Data: Data Quality Assurance';
+	label d3_security='Data: Data Security and Provenance';
+	label d4_dataflow='Data: Mapping Data Flow';
+	label d5_techinno='Data: Technology Use and Innovation';
+	label sc1_fundprop='Scientific Concepts: Funding Proposal Development ';
+	label sc2_litreview='Scientific Concepts: Literature Reviews ';
+	label sc3_protocol='Scientific Concepts: Protocol Development';
+	label sc4_resdesign='Scientific Concepts: Research Design';
+	label sc5_scholarworks='Scientific Concepts: Scholarly Works';
+	label ssm1_visits='Site and Study Management: Coordination with Sponsor/ CRO';
+	label ssm2_electronic='Site and Study Management: Electronic Management of Research Participants';
+	label ssm3_feasibility='Site and Study Management: Feasibility';
+	label ssm4_resources='Site and Study Management: Managing Resources ';
+	label ssm5_risk='Site and Study Management: Managing Risk ';
+	label ssm6_oppplans='Site and Study Management: Operational Plans ';
+	label ssm7_closeout='Site and Study Management: Study Closeout ';
+	label l1_prodev='Leadership and Professionalism: Professional Development';
+	label l2_externalaware='Leadership and Professionalism: External Awareness and Contribution ';
+	label l3_orgagility='Leadership and Professionalism: Organizational Agility ';
+	label l4_adapt='Leadership and Professionalism: Resilience and Adaptability ';
+	label l5_sme='Leadership and Professionalism: Subject Matter Expertise and Problem Solving';
+	label l6_teamwork='Leadership and Professionalism: Teamwork and Communication';
+	label resp_clinical='Will the position require a clinical degree (e.g., nursing)? This includes planning, providing, superviising, and documenting professional nursing care in the context of a clinical research study.';
+	label abul_admin='Ambulatory Medication Administration';
+	label adult_med='Adult Medication';
+	label ped_med='Pediatric Medication';
+	label or_med='OR Medication';
+	label blood_admin='Blood Administration (Adult/Peds)';
+	label peripheral_iv='Peripheral IV Insertion and Maintenance';
+	label alaris_pump='Alaris Pump Set up and Use';
+	label blood_draw='Draw blood from arterial lines';
+	label external_genital='External Genital and Speculum Examination';
+	label vaginal='Vaginal Speculum Insertion and Removal';
+	label fetal_monitor='Fetal Monitoring';
+	label adult_chemo='Adult Chemotherapy Administration';
+	label adult_bone_marrow='Adult Bone Marrow Administration';
+	label adult_dys='Adult Dysrhythmia Review';
+	label basic_dys='Basic Dysrhythmia Review';
+	label vesoactive='Vasoactive Drips';
+	label other_clinical_res='Other';
+	label clinical_desc='Describe the other clinical responsibilities.';
+	label toprespon_1='Responsibility 1';
+	label toprespon_2='Responsibility 2';
+	label toprespon_3='Responsibility 3';
+	label toprespon_4='Responsibility 4';
+	label toprespon_5='Responsibility 5';
+	label participant_contact='How frequently will this position have direct contact with research participants?';
+	label research_type='Please describe the type of research in which this position will be involved. Include basic information about research population, the complexity of the study, and interactions/management of study team members.';
+	label special_skills='Are there any special skills that the candidate must have in order to adequately meet position requirements?';
+	label emp_comm='Do you have any other comments about the job responsibilities for the planned position that you feel were not reflected here?';
+	label oth_comment='Do you have other comments for the committee regarding this position?';
+	label title_picker_complete='Complete?';
+	label title_picker_automat_v_0='Complete?';
+	label title_picker_results_timestamp='Survey Timestamp';
+	label suggested_title='Suggested Title:';
+	label job_code='Job Code';
+	label other_title='Other Title Suggested:';
+	label other_job_code='Other Job Code:';
+	label mapper_1='Mapper 1:';
+	label other_mapper='Other Mapper:';
+	label mapper_2='Mapper 2:';
+	label other_mapper2='Other Mapper:';
+	label contact_date='Contact Date:';
+	label crpwg_contact='CRPWG Contact:';
+	label other_crpwg_contact='Other CRPWG Contact:';
+	label udid1='UDID';
+	label position_n1='Position Number';
+	label udid2='UDID';
+	label position_n2='Position Number';
+	label udid3='UDID';
+	label position_n3='Position Number';
+	label udid4='UDID';
+	label position_n4='Position Number';
+	label udid5='UDID';
+	label position_n5='Position Number';
+	label udid6='UDID';
+	label position_n6='Position Number';
+	label notes='Notes:';
+	label title_picker_results_complete='Complete?';
+	label rpl_c1='The min value of progport1_infra, progport2_progport, and progport3_lias.  This must be 6 for RPL Sr. and at least 5 for RPL.';
+	label rpl_c2='The min value of l1_prodev, l2_mgmentor, l3_codeethics, l4_edtrain, l5_diversity, l6_teamwork.  Must be > 0 to qualify for RPL.';
+	label ly_1='ly_1';
+	label ly_2='ly_2';
+	label ly_3='ly_3';
+	label ly_4='ly_4';
+	label ly_5='ly_5';
+	label ly_6='ly_6';
+	label lv_1='lv_1';
+	label lv_2='lv_2';
+	label lv_3='lv_3';
+	label lv_4='lv_4';
+	label lv_5='lv_5';
+	label lv_6='lv_6';
+	label l_average='Leadership average';
+	label oy_1='oy_1';
+	label oy_2='oy_2';
+	label oy_3='oy_3';
+	label oy_4='oy_4';
+	label oy_5='oy_5';
+	label oy_6='oy_6';
+	label oy_7='oy_7';
+	label oy_8='oy_8';
+	label oy_9='oy_9';
+	label oy_10='oy_10';
+	label oy_11='oy_11';
+	label oy_12='oy_12';
+	label oy_13='oy_13';
+	label oy_14='oy_14';
+	label oy_15='oy_15';
+	label ov_1='ov_1';
+	label ov_2='ov_2';
+	label ov_3='ov_3';
+	label ov_4='ov_4';
+	label ov_5='ov_5';
+	label ov_6='ov_6';
+	label ov_7='ov_7';
+	label ov_8='ov_8';
+	label ov_9='ov_9';
+	label ov_10='ov_10';
+	label ov_11='ov_11';
+	label ov_12='ov_12';
+	label ov_13='ov_13';
+	label ov_14='ov_14';
+	label ov_15='ov_15';
+	label o_average='Research operations average';
+	label ey_1='ey_1';
+	label ey_2='ey_2';
+	label ey_3='ey_3';
+	label ey_4='ey_4';
+	label ey_5='ey_5';
+	label ev_1='ev_1';
+	label ev_2='ev_2';
+	label ev_3='ev_3';
+	label ev_4='ev_4';
+	label ev_5='ev_5';
+	label e_average='Safety and ethics average';
+	label dy_1='dy_1';
+	label dy_2='dy_2';
+	label dy_3='dy_3';
+	label dy_4='dy_4';
+	label dy_5='dy_5';
+	label dv_1='dv_1';
+	label dv_2='dv_2';
+	label dv_3='dv_3';
+	label dv_4='dv_4';
+	label dv_5='dv_5';
+	label d_average='Data average';
+	label scy_1='scy_1';
+	label scy_2='scy_2';
+	label scy_3='scy_3';
+	label scy_4='scy_4';
+	label scy_5='scy_5';
+	label scv_1='scv_1';
+	label scv_2='scv_2';
+	label scv_3='scv_3';
+	label scv_4='scv_4';
+	label scv_5='scv_5';
+	label sc_average='Scientific concepts average';
+	label ssmy_1='ssmy_1';
+	label ssmy_2='ssmy_2';
+	label ssmy_3='ssmy_3';
+	label ssmy_4='ssmy_4';
+	label ssmy_5='ssmy_5';
+	label ssmy_6='ssmy_6';
+	label ssmy_7='ssmy_6';
+	label ssmv_1='ssmv_1';
+	label ssmv_2='ssmv_2';
+	label ssmv_3='ssmv_3';
+	label ssmv_4='ssmv_4';
+	label ssmv_5='ssmv_5';
+	label ssmv_6='ssmv_6';
+	label ssmv_7='ssmv_7';
+	label ssm_average='Site and study management average';
+	label competency_average='Total competency average';
+	label crs='CRS';
+	label crssr='CRS Sr.';
+	label crc='CRC';
+	label crcsr='CRC Sr.';
+	label crnc='CRNC';
+	label crncsr='CRNC Sr.';
+	label reg='Regulatory Coordinator';
+	label regsr='Regulatory Coordinator Sr.';
+	label rpl='RPL';
+	label rplsr='RPL Sr.';
+	label sug_pos='Position';
+	label progportv1='value of progport1_infra';
+	label progportv2='value of progport2_progport';
+	label progportv3='value of progport3_lias';
+	label calculations_complete='Complete?';
+	run;
+
+proc format;
+	value unit_ 1='Anesthesiology' 2='Community and Family Medicine' 
+		3='DCRU' 4='Dermatology/Pathology' 
+		5='DGHI' 6='DHVI' 
+		7='DOCR' 8='DTRI/DCRI' 
+		9='Heart Center' 10='Medicine' 
+		11='Neurology' 12='Neurosurgery' 
+		13='OB/GYN' 14='Oncology' 
+		15='Ophthalmology' 16='Orthopedic Surgery' 
+		17='Pediatrics' 18='Population Health' 
+		19='Psychiatry' 20='Radiology' 
+		21='School of Nursing' 22='Surgery' 
+		555='Other (specify)';
+	value medicine_div_ 1='Cardiology' 2='Endocrinology' 
+		3='Gastroenterology' 4='General Internal Medicine' 
+		5='Geriatrics' 6='Hematological Malignancies & Cellular Therapy' 
+		7='Hematology' 8='Infectious Diseases' 
+		9='Medical Oncology' 10='Nephrology' 
+		11='Pulmonary, Allergy, and Critical Care Medicine' 12='Rheumatology and Immunology';
+	value nursing_degree_ 1='LPN' 2='RN' 
+		3='BSN' 4='MSN' 
+		555='Other' 6='No nursing degree held';
+	value type_position_ 1='New position' 2='Reclassification of a filled position' 
+		3='Reclassification of a vacant position';
+	value position_howmany_ 1='1' 2='2' 
+		3='3' 4='4' 
+		5='5' 6='6';
+	value resp_progport_ 1='Yes' 0='No';
+	value progport1_infra_ 5='Manages the research program or shared resource operations. Monitors and adheres to the established budget. Manages and trains staff.' 6='Determines the scope of and changes to the research portfolio operations or shared resource. Develops, negotiates, and oversees budgets. Allocates and forecasts resources. Oversees staff who manage the day-to-day operational issues.' 
+		0='Not part of the job.';
+	value progport2_progport_ 5='Manages the program or shared resource by employing strategies to reach established short- and long-term goals. Monitors the program''s success using relevant reports. Investigates trends and implements modifications to improve the effectiveness of the research program or shared resource.' 6='Determines short- and long-term goals of the broad research portfolio or shared resource. Determines the metrics used to evaluate the research portfolio effectiveness or impact and oversee implementation of the necessary changes.' 
+		0='Not part of the job.';
+	value progport3_lias_ 5='Ensures that institutional communications are shared with research program staff. Maintains communication within program and with other departments or offices to accomplish the program objectives.' 6='Ensures that institutional communications are shared with staff and faculty within the research program. Establish and maintain internal (Duke) and external communications to accomplish portfolio objectives and ensure successful research partnerships. Represents the research portfolio and research areas at the institutional level and with collaborators external to Duke.' 
+		0='Not part of the job.';
+	value o1_contracts_ 3='Recognizes typical agreements (MTAs, CDAs, DUAs, DTAs, etc.) are necessary and alerts appropriate parties.' 4='For complex scenarios, recognizes when all types of agreements are necessary. Directs teams to  appropriate Duke offices for execution.' 
+		5='For complex scenarios, recognizes when agreements are necessary within the research program and facilitates the process, by coordinating with study teams and appropriate Duke offices.' 6='Collaborates with institutional leaders to ensure that resources related to contracts and agreements are implemented. Escalates issues and helps the study teams resolve them.' 
+		0='Not part of the job.';
+	value o2_fda_ 3='Prepares FDA regulatory submissions in collaboration with ORAQ, including development, submission, and maintenance of relevant documentation. Addresses FDA review and/or potential hold issues in collaboration with the Principal Investigator (PI).' 4='Serves as an IND submissions expert resource. Assists junior staff to address FDA review or issues.  Provides oversight and guidance to those preparing documents, annual reports, and amendments required by the FDA.' 
+		0='Not part of the job.';
+	value o3_regpp_ 3='Knowledgeable in regulatory and institutional policies and processes;  applies appropriately in study documentation, protocol submissions, and SOPs.' 4='Serves as an expert resource to multiple study teams/research program regarding regulatory and institutional policies and processes.' 
+		0='Not part of the job.';
+	value o4_international_ 2='Assist with study level documentation (ethics approvals, export controls, etc.) and approvals for international studies.' 3='Maintains study level documentation (ethics approvals, export controls, etc.) and approvals for international studies. May develop resources and tools for management of international studies, and/or coordinate with other entities or offices.' 
+		4='Independently navigates conversations with foreign agencies and study teams to develop or obtain the required documentation for compliance with international regulations. May assist others with ensuring regulatory compliance with international studies.' 6='Serves as an expert resource across all study teams within the research portfolio for navigating regulatory compliance with international studies.' 
+		0='Not part of the job.';
+	value o5_ip_ 2='Under supervision, assists with managing investigational products including arrival, storage, and handling including requisitions, inventory, and reordering.' 3='Manages all aspects of managing and documenting Investigational Product (IP), including arrival, storage, tracking, and provision to research participants. Serves as the primary liaison with sponsors, IDS, and other parties as necessary. Follows protocol schema for randomization and blinding/unblinding.' 
+		4='Oversees management and documentation of investigational products (IP) for multiple study teams/research program. Serves as an IP expert resource for study teams, DUHS procurement, billing, and compliance. Designs, implements, and optimizes methods for handling IP.' 6='Participates in or leads the development of institutional policies and guidance documents about managing investigational product (IP).  Serves as expert resource and trainer to implement and comply with systems for managing and documenting IP.' 
+		0='Not part of the job.';
+	value o6_monaudit_ 2='Under supervision, prepares for study monitoring and study audit visits.' 3='Prepares for and provides support for study monitoring and study audit visits. Provides support for reviewer during visit. Addresses and corrects findings.' 
+		4='Provides direction to multiple study teams/research program to prepare for study monitoring or study audit visits.' 6='Participates in or leads development of monitoring and audit training sessions or policies and guidelines. Serves as an expert resource to address and correct findings.' 
+		0='Not part of the job.';
+	value o7_partdoc_ 1='Under supervision, may document some participant-level information for non-complex (e.g., questionnaire, data registry, scripted) studies outside of the EMR.' 2='Maintain participant-level documentation for non-complex (e.g., questionnaire, data registry, scripted) studies outside of the EMR.' 
+		3='Maintain participant level documentation for all studies, including those that are complex in nature (e.g., procedural and interventional studies) and/or require access to the Duke EHR.' 4='Provides oversight, training, and expertise to multiple study teams/research program regarding participant level  documentation for all studies, including those that are complex in nature (e.g., procedural and interventional studies) and/or require DUHS billing.' 
+		0='Not part of the job.';
+	value o8_retention_ 1='Follows SOPs and strategies to manage and retain research subjects.' 3='Employ strategies to maintain retention rates and evaluate processes to identify problems related to retention rates. Escalate issues.' 
+		4='Serves as an expert participant retention resource to multiple study teams/research program team members, including liaising with and being knowledgeable about other resources at Duke.' 0='Not part of the job.';
+	value o9_recruitment_ 2='Recruits research participants according to study protocol.' 3='Employs and may develop strategies to maintain recruitment rates and evaluate processes to identify problems related to recruitment rates. Escalates issues.' 
+		4='For multiple study teams, develops and oversees the implementation of strategies for meeting recruitment goals. Provide training.' 5='Develops and oversees the implementation of strategies for meeting recruitment goals for the research program(s). Provide training.' 
+		0='Not part of the job.';
+	value o10_screen_ 1='Under supervision, collect information from sources other than the EHR to assist study team in determining eligibility.' 2='Screens participants in person or over the phone for non-complex studies (e.g., questionnaire, data registry, scripted) or may collect information from the EHR to assist study team in determining eligibility.' 
+		3='Screen participants for all studies, including those that are complex in nature (e.g., procedural and interventional studies).' 4='Screens participants for all studies, including those that are complex in nature (e.g., procedural and interventional studies). Provides oversight and training in screening activities to multiple study teams.' 
+		5='Serves as an expert to research program team members in the area of screening.  May provide oversight and conduct training in this area.' 0='Not part of the job.';
+	value o11_sop_ 1='Follows SOPs.' 3='Develops or helps develop SOPs for implementation of research protocols.' 
+		4='Develops, oversees adherence, and trains in the use and development of SOPs across multiple study teams/research program(s).' 6='Develops, oversees adherence, and trains in the use and development of SOPs across research portfolio. May provide input for institutional SOPs.' 
+		0='Not part of the job.';
+	value o12_specimen_ 1='Under supervision, employs simple procedures for collecting, preparing, processing, shipping, and maintaining inventory of specimens.' 2='Independently employ simple procedures for collecting, preparing, processing, shipping, and maintaining inventory of specimens.' 
+		3='Collects, prepares, processes, ships, and maintains the inventory of research specimens, primarily those requiring complex procedures.' 4='Creates, optimizes, and oversees the systems for managing  specimens for multiple study teams/research program.  Serves as an expert resource and trainer in specimen collection, processing, preparation, shipping and maintenance.' 
+		0='Not part of the job.';
+	value o13_studydoc_ 2='Assists with establishing and maintaining study-level documentation.' 3='Maintain study level documentation for all studies, including those that are complex in nature (e.g., procedural and interventional studies).' 
+		4='Maintains study-level documentation for all studies, including those that are complex in nature (e.g., procedural and interventional studies). Provides oversight and training and lends expertise to multiple study teams.' 5='Provides expertise to research program team members in study-level documentation. Provides oversight and training and lends expertise to research program.' 
+		0='Not part of the job.';
+	value o14_visits_ 1='Prepares documents, equipment, supplies, etc. Assists with the conduct and documentation of non-complex visits and scripted testing or interviews.' 2='Schedules participants for research visits (excluding those requiring EMR access). Prepares necessary documents, equipment, supplies, etc. Conducts and documents non-complex visits and scripted testing or interviews.  May manage participant payment.' 
+		3='Conducts and plans for visits for all studies, including those that are complex in nature (e.g., procedural and interventional studies). May train staff.' 4='Serves as an expert resource and trainer to multiple study teams/research program for preparing and conducting complex study visits, developing tools, and implementing operational plans.' 
+		0='Not part of the job.';
+	value o15_meetings_ 1='Participates in study team meetings.' 3='Lead meetings that are multidisciplinary, including those with complex objectives.' 
+		4='Leads team meetings and facilitates healthy communication between staff. Ensures good communication across multiple study teams, and mentors staff to improve communication strategies.' 5='Prepares for and leads research program meetings. Ensures good communication within the research program, including mentoring staff to improve communication strategies.' 
+		0='Not part of the job.';
+	value e1_ae_ 2='Recognizes known potential adverse events, identified in the protocol or investigator brochure, and reports to study team.' 3='Identifies all AEs, and determines whether or not they are reportable.  Collaborates with the PI to determine AE attributes, including relatedness to study.' 
+		4='Ensures that multiple study teams/research program team members are appropriately identifying and documenting adverse event information.' 6='Serves as an expert in AE identification and documentation, including liaising with and being knowledgeable about other resources at Duke.' 
+		0='Not part of the job.';
+	value e2_consent_ 2='Conducts and documents consent for participants in non-complex (e.g., questionnaire, data registry, scripted) studies that do not require access to the EHR.' 3='Conduct and document consent for participants in all studies, including those that are complex in nature and/or require access to the EHR.' 
+		4='Provides oversight and training to multiple study teams/research program team members who conduct and document consent. Serves as an expert resource with regard to conducting and documenting consent including liaising with and being knowledgeable about other resources at Duke.' 0='Not part of the job.';
+	value e3_devconsentplan_ 2='Assists with the development of consent plans and documents for participants.' 3='Develop consent plans and documents for participants in a variety of studies.' 
+		4='Provides oversight and training to multiple study teams/research program team members who develop the consent plan and document. Serves as an expert resource with regard to developing consent plans and documents for participants in a variety of studies.' 0='Not part of the job.';
+	value e4_irb_ 2='Under supervision, for non-complex studies (e.g., survey studies and registries), develop and submit documentation and information for ethics review.' 3='Develop and submit documentation and information for ethics review. Communicate with the IRB staff and reviewers and handles issues appropriately.' 
+		4='Provides oversight and training to multiple study teams/research program team members who develop and submit documentation and information for ethics review.' 0='Not part of the job.';
+	value e5_sponregreport_ 3='Prepares and submits documents needed for regulatory and safety reporting to sponsors and other agencies.' 4='Provides oversight and training to multiple study teams/research program team members who prepare and submit documents needed for regulatory and safety reporting to sponsors and other agencies.' 
+		0='Not part of the job.';
+	value d1_datacollect_ 1='Enters basic data for research studies.  Scores tests and measures that do not require interpretation, according to the protocol.' 2='Enters and collects basic data for research studies. May score scripted or validated tests and measures.' 
+		3='Enters and collects data.  Develops data entry or collection protocols or tools. May provide oversight or training to study team members collecting or entering data.' 4='For multiple study teams, selects data capture methods and discusses advantages and disadvantages of each. Implements data capture methods at the unit, division, or departmental level. Independently designs ECRFs and EDCs to collect data according to protocol.' 
+		5='Selects and implements data capture methods appropriate for the research program.  Serves as an expert in designing ECRFs and EDCs to collect data according to protocols and research program processes.' 6='Serves as an institutional resource on ECRFs, EDCSs, technologies, and software to ensure the highest quality data collection and capture. Actively encourages connections with stakeholders (e.g., statisticians) and institutional resources (e.g., ISO, IRB).' 
+		0='Not part of the job.';
+	value d2_qa_ 1='Under supervision, corrects and documents incomplete, inaccurate or missing data for non-complex studies. Follows SOPs for quality assurance.' 2='Independently corrects and documents incomplete, inaccurate or missing data for non-complex studies. Follows SOPs for quality assurance. Runs summaries and reports on existing data.' 
+		3='Ensures accuracy and completeness of data for all studies, including those that are complex in nature. Recognizes data quality trends and escalates as appropriate. May develop tools for, and train others in, data quality assurance procedures.' 4='Oversees the process of QA, data corrections & queries used within multiple study teams/the research program, including creating and using QA protocols, queries, summaries and reports.  Recognizes trends, and recommends strategies to improve processes or retrain staff. Serves as an expert data corrections, queries, and quality assurance resource, including liaising with and being knowledgeable about other related resources at Duke.' 
+		6='Coordinates with institutional leadership on initiatives and priority setting to ensure appropriate QA processes.  Oversee implementation of data quality processes across research portfolio.' 0='Not part of the job.';
+	value d3_security_ 1='Follows required processes, policies, and systems to ensure data security and provenance.' 2='Follows required processes, policies, and systems to ensure data security and provenance.  In addition, recognizes and reports security of physical and electronic data vulnerabilities.' 
+		3='Recognizes and reports security of physical and electronic data vulnerabilities. May develop or review RDSPs for multiple study protocols.' 4='Assists multiple study teams in developing protocols that include strategies and processes to ensure data security and provenance.  Recommends and leads implementation of improved processes, policies, and systems to ensure data security and data provenance.' 
+		5='Develops and implements protocols for research program that include strategies and processes to ensure data security and provenance.  Serves as an expert data provenance and security resource, including liaising with and being knowledgeable about other related resources at Duke.' 6='At the institutional level, assists with development of, or develops data provenance and security training sessions, guidelines, and policies.' 
+		0='Not part of the job.';
+	value d4_dataflow_ 3='Maps a protocol''s data flow plan including data capture, storage, transfer, management, quality, and preparation for analysis (may include data from EDCs, EHR, mobile apps, etc.).' 4='Serves as an expert resource to multiple study teams/research program with regard to mapping data flow. Predicts areas of vulnerability in the data flow plan.  Determines areas where data provenance may be compromised, and helps study teams/research program staff work through solutions. Ensures that study teams are familiar with data flow resources at Duke.' 
+		6='Predicts areas of vulnerability in data flow across the research portfolio. Serve as an expert resource across research portfolio with regard to data capture, storage, management, quality, and preparation for analysis. Oversee implementation of data flow plans across the research portfolio. Ensures that study teams are familiar with and using data flow plan resources at Duke.' 0='Not part of the job.';
+	value d5_techinno_ 1='Learns and uses new technology when required.' 3='Independently use and implement technology to enhance productivity or process.' 
+		4='Seeks out, integrates, and applies new technical knowledge towards innovation and performance improvement for multiple study teams/research program, as relevant.' 6='Seeks out, integrates, and applies new technical knowledge towards innovation and performance improvement, as relevant. Oversees implementation of new technologies and ensures continuous evaluation of technology solutions throughout the research portfolio.' 
+		0='Not part of the job.';
+	value sc1_fundprop_ 3='Assists with or contributes to the development of funding proposals.' 4='Independently develops substantial portions of proposals and grants. Assesses and determines solutions for operational shortcomings of proposals.' 
+		6='Independently develops research proposals and grants, including leading the drafting of research aims, background, methods, etc.' 0='Not part of the job.';
+	value sc2_litreview_ 2='Assists with simple literature searches.' 3='Conducts literature searches and reviews.' 
+		5='Independently reviews articles, synthesizes the literature, and uses to assist in the development of manuscripts or grant proposals.' 6='Independently reviews articles, synthesizes the literature, and uses to independently develop manuscripts or grant proposals.' 
+		0='Not part of the job.';
+	value sc3_protocol_ 2='Under guidance, develops sections of protocols for simple studies (e.g., registries, survey studies)' 3='Using scientific proposals from the PI, develops research protocols.' 
+		4='Independently develops protocols for complex investigator-initiated studies, across multiple PIs or study teams.' 5='Independently develops protocols for multiple complex investigator-initiated studies within the research program.' 
+		6='Serves as an expert resource to faculty, trainees, and staff for the development of protocols for complex investigator-initiated studies.' 0='Not part of the job.';
+	value sc4_resdesign_ 3='Demonstrates a basic understanding of the elements of research study designs.' 4='Provides a significant contribution to protocols or research proposals because of expertise in research design.' 
+		6='Independently develops protocols or research proposals because of expertise in research design. Serves as an institutional expert resource with regard to research design.' 0='Not part of the job.';
+	value sc5_scholarworks_ 2='Provides minimal contribution to scientific publications or presentations (no authorship).' 3='Contributes to the development of scientific publications or presentations.  Serves as an author on poster presentations or publications.' 
+		4='Provide significant contribution or leadership on accepted, peer-reviewed publication or conference presentation.  Mentor others in this area.' 6='Provide significant contribution or leadership on multiple accepted, peer-reviewed publications or conference presentations. Mentor others in this area.' 
+		0='Not part of the job.';
+	value ssm1_visits_ 2='As directed, attend or schedule site visits.' 3='Prepares for, coordinates, and actively participates in site visits. Communicates effectively with sponsors and/or CROs.' 
+		4='Mentor, train, and oversee activities related to how teams communicate with sponsors and/or CROs.' 0='Not part of the job.';
+	value ssm2_electronic_ 2='Associates patients within five business days of study enrollment for studies without chargables, orderables, and schedulables.' 3='Uses systems and system reports to manage participant research activities and charge routing.' 
+		4='Oversees use of systems and system reports to manage participant research activities and charge routing.' 0='Not part of the job.';
+	value ssm3_feasibility_ 3='Collects appropriate information to determine whether the study team''s participation in a specific trial is feasible. May make recommendations.' 4='Make feasibility recommendations for multiple study teams research program.  Develop and oversee processes to determine participation in trials.' 
+		0='Not part of the job.';
+	value ssm4_resources_ 1='For studies with simple supplies or equipment, assists with ensuring that there are ample supplies and that equipment is in good working order.' 2='For studies with simple supplies or equipment, ensures that there are ample supplies and that equipment is in good working order.' 
+		3='For studies with complex supplies or equipment, ensures that there are ample supplies and that equipment is in good working order. May forecast staffing needs.' 4='Oversee management of resources (staff, supplies, equipment) for multiple study teams/research program. May manage the budget for research studies.' 
+		6='Oversees the research resource and/or finance processes for a broad research portfolio. Works with central offices to optimize process.' 0='Not part of the job.';
+	value ssm5_risk_ 3='Ensure that studies are conducted in compliance with institutional requirements and other policies.' 4='For multiple study teams, ensure that studies are conducted in compliance with institutional requirements and other policies.' 
+		5='Works with the CRU or departmental leadership to ensure that studies within the research program are conducted in compliance with institutional requirements and policies.' 0='Not part of the job.';
+	value ssm6_oppplans_ 3='Follow, and may develop, protocol-specific systems and documents including process flows.' 4='Oversees implementation of operational plans across multiple study teams or sites.' 
+		5='Oversees implementation of operational plans across research program, including at multiple sites.' 6='Oversees implementation of operational plans across multiple research programs.' 
+		0='Not part of the job.';
+	value ssm7_closeout_ 1='As directed, assists in preparing studies for closeout, (e.g., packing files, documenting files for storage, shipping extra supplies back to sponsor).' 3='Prepare studies for closeout and document storage.' 
+		4='Develops and implements closeout procedures for multiple studies across multiple teams.' 5='Works with the CRU or departmental leadership to ensure that studies are closed according to best practices and guidelines.' 
+		0='Not part of the job.';
+	value l1_prodev_ 2='Works with the manager to understand areas of opportunity and develop a training plan. Takes training courses and applies the knowledge and skills. May also train others in the skills learned.' 3='Proactively seeks opportunities to add relevant skills and certifications to own portfolio.' 
+		4='Encourages staff to take part in professional development opportunities.' 5='Evaluates and implements the department, CRU, or division professional development and/or training programs to ensure they meet the needs of staff retention, continuous improvement, and development.' 
+		0='Not part of the job.';
+	value l2_externalaware_ 2='Keeps current with research updates by attending key external departmental meetings (i.e. Research Wednesday, RPN, additional training, etc.).' 3='Keeps current with research updates by attending key external offerings (i.e. Research Wednesday, RPN, events outside of Duke, etc.) and applies the learned material to the job. May disseminate information to others. Serve on committees and workgroups.' 
+		4='Provide opportunities for staff to attend key external offerings (i.e. Research Wednesday, RPN, events outside of Duke, etc.).  Play key role on committees and workgroups.' 5='Keeps current with advances in the scientific area and considers the impact on the research program.  Keep self and team current with research updates by attending external offerings; apply learned material on the job.  Play key/leadership role on committees and workgroups.' 
+		6='Keeps current with research updates and advances in the scientific area, considers the impact on the broad research portfolio, and oversees necessary implementation. Serves in a leadership capacity with external groups (e.g., speaks at events, leads institutional initiatives or committees).' 0='Not part of the job.';
+	value l3_orgagility_ 3='Navigates processes and people involved in Duke clinical research, demonstrates the organizational awareness, and has the interpersonal skills necessary  to get work done efficiently.' 4='Escalates organizational issues that could be optimized to improve the institutional research process.' 
+		5='Navigates processes and people involved in Duke clinical research, demonstrates the organizational awareness, and has the interpersonal skills necessary to get work done efficiently.  Develops and implements solutions that work within the existing leadership or organizational structure.' 6='Develops and implements solutions at the institutional level to improve the research process. Uses expertise and acumen to influence change at the division, department, or CRU level.' 
+		0='Not part of the job.';
+	value l4_adapt_ 3='Demonstrates resilience and is adaptive to change.' 4='Actively facilitates and leads multiple study team''s adoption of change in their working environment.' 
+		5='Demonstrates resilience and actively facilitates the research program through change.' 6='Demonstrates resilience, leadership, and actively facilitates change for research portfolio.' 
+		0='Not part of the job.';
+	value l5_sme_ 3='Uses advanced subject matter expertise in the therapeutic area or clinical research to solve problems.' 4='Uses advanced subject matter expertise in the therapeutic area or clinical research to solve problems across multiple study teams.' 
+		5='Uses advanced subject matter expertise in the therapeutic area or clinical research to solve complex problems or foster innovation within the research program.' 6='Uses advanced subject matter expertise in the therapeutic area or clinical research to solve complex problems or foster innovation across the broad research portfolio.' 
+		0='Not part of the job.';
+	value l6_teamwork_ 3='Communicates effectively with others, regardless of reporting relationship, to accomplish shared work objectives.' 4='Trains other to communicate effectively within teams. Facilitates resolution of issues associated with teams or communication.' 
+		5='Communicates effectively with others, regardless of reporting relationship, to accomplish shared work objectives. Establishes and assigns the activities of the research program team members to accomplish the study goals.' 6='Communicates effectively with others, regardless of reporting relationship, to accomplish shared work objectives. Establishes and assigns activities of other managers to accomplish goals of the broad research portfolio.' 
+		0='Not part of the job.';
+	value resp_clinical_ 1='Yes' 0='No';
+	value abul_admin_ 1='Yes' 0='No';
+	value adult_med_ 1='Yes' 0='No';
+	value ped_med_ 1='Yes' 0='No';
+	value or_med_ 1='Yes' 0='No';
+	value blood_admin_ 1='Yes' 0='No';
+	value peripheral_iv_ 1='Yes' 0='No';
+	value alaris_pump_ 1='Yes' 0='No';
+	value blood_draw_ 1='Yes' 0='No';
+	value external_genital_ 1='Yes' 0='No';
+	value vaginal_ 1='Yes' 0='No';
+	value fetal_monitor_ 1='Yes' 0='No';
+	value adult_chemo_ 1='Yes' 0='No';
+	value adult_bone_marrow_ 1='Yes' 0='No';
+	value adult_dys_ 1='Yes' 0='No';
+	value basic_dys_ 1='Yes' 0='No';
+	value vesoactive_ 1='Yes' 0='No';
+	value other_clinical_res_ 1='Yes' 0='No';
+	value toprespon_1_ 1='Contracts and Agreements' 2='FDA Regulatory Submissions' 
+		3='Institutional Regulatory Policies and Processes' 4='International Regulatory Documentation' 
+		5='Investigational Products' 6='Monitoring and Audits' 
+		7='Participant Level Documentation' 8='Participant Retention' 
+		9='Recruitment' 10='Screening' 
+		11='SOPs' 12='Specimen Management' 
+		13='Study Level Documentation' 14='Study Visits' 
+		15='Team Meetings' 16='Adverse Events' 
+		17='Consent Procedures' 18='Development of Informed Consent Documentation and Plan' 
+		19='Navigating the Ethics Review Process (IRB)' 20='Sponsor/Regulatory Reporting' 
+		21='Data Collection and Entry' 22='Data Quality Assurance' 
+		23='Data Security and Provenance' 24='Mapping Data Flow' 
+		25='Technology Use and Innovation' 26='Funding Proposal Development' 
+		27='Literature Reviews' 28='Protocol Development' 
+		29='Research Design' 30='Scholarly Works' 
+		31='Coordination with Sponsor/ CRO' 32='Electronic Management of Research Participants' 
+		33='Feasibility' 34='Managing Resources' 
+		35='Managing Risk' 36='Operational Plans' 
+		37='Study Closeout' 38='Portfolio and Program Development and Management' 
+		39='Clinical/Nursing Responsibilities';
+	value toprespon_2_ 1='Contracts and Agreements' 2='FDA Regulatory Submissions' 
+		3='Institutional Regulatory Policies and Processes' 4='International Regulatory Documentation' 
+		5='Investigational Products' 6='Monitoring and Audits' 
+		7='Participant Level Documentation' 8='Participant Retention' 
+		9='Recruitment' 10='Screening' 
+		11='SOPs' 12='Specimen Management' 
+		13='Study Level Documentation' 14='Study Visits' 
+		15='Team Meetings' 16='Adverse Events' 
+		17='Consent Procedures' 18='Development of Informed Consent Documentation and Plan' 
+		19='Navigating the Ethics Review Process (IRB)' 20='Sponsor/Regulatory Reporting' 
+		21='Data Collection and Entry' 22='Data Quality Assurance' 
+		23='Data Security and Provenance' 24='Mapping Data Flow' 
+		25='Technology Use and Innovation' 26='Funding Proposal Development' 
+		27='Literature Reviews' 28='Protocol Development' 
+		29='Research Design' 30='Scholarly Works' 
+		31='Coordination with Sponsor/ CRO' 32='Electronic Management of Research Participants' 
+		33='Feasibility' 34='Managing Resources' 
+		35='Managing Risk' 36='Operational Plans' 
+		37='Study Closeout' 38='Portfolio and Program Development and Management' 
+		39='Clinical/Nursing Responsibilities';
+	value toprespon_3_ 1='Contracts and Agreements' 2='FDA Regulatory Submissions' 
+		3='Institutional Regulatory Policies and Processes' 4='International Regulatory Documentation' 
+		5='Investigational Products' 6='Monitoring and Audits' 
+		7='Participant Level Documentation' 8='Participant Retention' 
+		9='Recruitment' 10='Screening' 
+		11='SOPs' 12='Specimen Management' 
+		13='Study Level Documentation' 14='Study Visits' 
+		15='Team Meetings' 16='Adverse Events' 
+		17='Consent Procedures' 18='Development of Informed Consent Documentation and Plan' 
+		19='Navigating the Ethics Review Process (IRB)' 20='Sponsor/Regulatory Reporting' 
+		21='Data Collection and Entry' 22='Data Quality Assurance' 
+		23='Data Security and Provenance' 24='Mapping Data Flow' 
+		25='Technology Use and Innovation' 26='Funding Proposal Development' 
+		27='Literature Reviews' 28='Protocol Development' 
+		29='Research Design' 30='Scholarly Works' 
+		31='Coordination with Sponsor/ CRO' 32='Electronic Management of Research Participants' 
+		33='Feasibility' 34='Managing Resources' 
+		35='Managing Risk' 36='Operational Plans' 
+		37='Study Closeout' 38='Portfolio and Program Development and Management' 
+		39='Clinical/Nursing Responsibilities';
+	value toprespon_4_ 1='Contracts and Agreements' 2='FDA Regulatory Submissions' 
+		3='Institutional Regulatory Policies and Processes' 4='International Regulatory Documentation' 
+		5='Investigational Products' 6='Monitoring and Audits' 
+		7='Participant Level Documentation' 8='Participant Retention' 
+		9='Recruitment' 10='Screening' 
+		11='SOPs' 12='Specimen Management' 
+		13='Study Level Documentation' 14='Study Visits' 
+		15='Team Meetings' 16='Adverse Events' 
+		17='Consent Procedures' 18='Development of Informed Consent Documentation and Plan' 
+		19='Navigating the Ethics Review Process (IRB)' 20='Sponsor/Regulatory Reporting' 
+		21='Data Collection and Entry' 22='Data Quality Assurance' 
+		23='Data Security and Provenance' 24='Mapping Data Flow' 
+		25='Technology Use and Innovation' 26='Funding Proposal Development' 
+		27='Literature Reviews' 28='Protocol Development' 
+		29='Research Design' 30='Scholarly Works' 
+		31='Coordination with Sponsor/ CRO' 32='Electronic Management of Research Participants' 
+		33='Feasibility' 34='Managing Resources' 
+		35='Managing Risk' 36='Operational Plans' 
+		37='Study Closeout' 38='Portfolio and Program Development and Management' 
+		39='Clinical/Nursing Responsibilities';
+	value toprespon_5_ 1='Contracts and Agreements' 2='FDA Regulatory Submissions' 
+		3='Institutional Regulatory Policies and Processes' 4='International Regulatory Documentation' 
+		5='Investigational Products' 6='Monitoring and Audits' 
+		7='Participant Level Documentation' 8='Participant Retention' 
+		9='Recruitment' 10='Screening' 
+		11='SOPs' 12='Specimen Management' 
+		13='Study Level Documentation' 14='Study Visits' 
+		15='Team Meetings' 16='Adverse Events' 
+		17='Consent Procedures' 18='Development of Informed Consent Documentation and Plan' 
+		19='Navigating the Ethics Review Process (IRB)' 20='Sponsor/Regulatory Reporting' 
+		21='Data Collection and Entry' 22='Data Quality Assurance' 
+		23='Data Security and Provenance' 24='Mapping Data Flow' 
+		25='Technology Use and Innovation' 26='Funding Proposal Development' 
+		27='Literature Reviews' 28='Protocol Development' 
+		29='Research Design' 30='Scholarly Works' 
+		31='Coordination with Sponsor/ CRO' 32='Electronic Management of Research Participants' 
+		33='Feasibility' 34='Managing Resources' 
+		35='Managing Risk' 36='Operational Plans' 
+		37='Study Closeout' 38='Portfolio and Program Development and Management' 
+		39='Clinical/Nursing Responsibilities';
+	value participant_contact_ 1='Daily' 2='Weekly' 
+		3='Monthly' 4='Almost Never' 
+		5='Never';
+	value title_picker_complete_ 0='Incomplete' 1='Unverified' 
+		2='Complete';
+	value title_picker_automat_v_0_ 0='Incomplete' 1='Unverified' 
+		2='Complete';
+	value suggested_title_ 1='Clinical Research Specialist' 2='Clinical Research Specialist, Sr.' 
+		3='Clinical Research Coordinator' 4='Clinical Research Coordinator, Sr.' 
+		5='Clinical Research Nurse Coordinator' 6='Clinical Research Nurse Coordinator, Sr.' 
+		7='Regulatory Coordinator' 8='Regulatory Coordinator, Sr.' 
+		9='Research Program Leader' 10='Research Program Leader, Sr.' 
+		11='Research Interventionist' 555='Other';
+	value job_code_ 1='0802 (CRS)' 2='0803 (CRS Sr.)' 
+		3='1201 (CRC)' 4='1202 (CRC Sr.)' 
+		5='1203 (CRNC)' 6='1204 (CRNC Sr.)' 
+		7='1219 (Reg Coord)' 8='1220 (Reg Coord Sr.)' 
+		9='1280 (RPL)' 10='1281 (RPL Sr.)' 
+		11='1243 (Research Interventionist)' 555='Other';
+	value mapper_1_ 1='Rebecca Brouwer' 2='Deborah Hannah' 
+		3='Terry Ainsworth' 4='Denise Snyder' 
+		5='Christine Deeter' 555='Other';
+	value mapper_2_ 1='Rebecca Brouwer' 2='Deborah Hannah' 
+		3='Terry Ainsworth' 4='Denise Snyder' 
+		5='Christine Deeter' 555='Other';
+	value crpwg_contact_ 1='Rebecca Brouwer' 2='Deborah Hannah' 
+		3='Christine Deeter' 555='Other';
+	value title_picker_results_complete_ 0='Incomplete' 1='Unverified' 
+		2='Complete';
+	value calculations_complete_ 0='Incomplete' 1='Unverified' 
+		2='Complete';
+	run;
+
+data redcap;
+	set redcap;
+
+	format unit unit_.;
+	format medicine_div medicine_div_.;
+	format nursing_degree nursing_degree_.;
+	format type_position type_position_.;
+	format position_howmany position_howmany_.;
+	format resp_progport resp_progport_.;
+	format progport1_infra progport1_infra_.;
+	format progport2_progport progport2_progport_.;
+	format progport3_lias progport3_lias_.;
+	format o1_contracts o1_contracts_.;
+	format o2_fda o2_fda_.;
+	format o3_regpp o3_regpp_.;
+	format o4_international o4_international_.;
+	format o5_ip o5_ip_.;
+	format o6_monaudit o6_monaudit_.;
+	format o7_partdoc o7_partdoc_.;
+	format o8_retention o8_retention_.;
+	format o9_recruitment o9_recruitment_.;
+	format o10_screen o10_screen_.;
+	format o11_sop o11_sop_.;
+	format o12_specimen o12_specimen_.;
+	format o13_studydoc o13_studydoc_.;
+	format o14_visits o14_visits_.;
+	format o15_meetings o15_meetings_.;
+	format e1_ae e1_ae_.;
+	format e2_consent e2_consent_.;
+	format e3_devconsentplan e3_devconsentplan_.;
+	format e4_irb e4_irb_.;
+	format e5_sponregreport e5_sponregreport_.;
+	format d1_datacollect d1_datacollect_.;
+	format d2_qa d2_qa_.;
+	format d3_security d3_security_.;
+	format d4_dataflow d4_dataflow_.;
+	format d5_techinno d5_techinno_.;
+	format sc1_fundprop sc1_fundprop_.;
+	format sc2_litreview sc2_litreview_.;
+	format sc3_protocol sc3_protocol_.;
+	format sc4_resdesign sc4_resdesign_.;
+	format sc5_scholarworks sc5_scholarworks_.;
+	format ssm1_visits ssm1_visits_.;
+	format ssm2_electronic ssm2_electronic_.;
+	format ssm3_feasibility ssm3_feasibility_.;
+	format ssm4_resources ssm4_resources_.;
+	format ssm5_risk ssm5_risk_.;
+	format ssm6_oppplans ssm6_oppplans_.;
+	format ssm7_closeout ssm7_closeout_.;
+	format l1_prodev l1_prodev_.;
+	format l2_externalaware l2_externalaware_.;
+	format l3_orgagility l3_orgagility_.;
+	format l4_adapt l4_adapt_.;
+	format l5_sme l5_sme_.;
+	format l6_teamwork l6_teamwork_.;
+	format resp_clinical resp_clinical_.;
+	format abul_admin abul_admin_.;
+	format adult_med adult_med_.;
+	format ped_med ped_med_.;
+	format or_med or_med_.;
+	format blood_admin blood_admin_.;
+	format peripheral_iv peripheral_iv_.;
+	format alaris_pump alaris_pump_.;
+	format blood_draw blood_draw_.;
+	format external_genital external_genital_.;
+	format vaginal vaginal_.;
+	format fetal_monitor fetal_monitor_.;
+	format adult_chemo adult_chemo_.;
+	format adult_bone_marrow adult_bone_marrow_.;
+	format adult_dys adult_dys_.;
+	format basic_dys basic_dys_.;
+	format vesoactive vesoactive_.;
+	format other_clinical_res other_clinical_res_.;
+	format toprespon_1 toprespon_1_.;
+	format toprespon_2 toprespon_2_.;
+	format toprespon_3 toprespon_3_.;
+	format toprespon_4 toprespon_4_.;
+	format toprespon_5 toprespon_5_.;
+	format participant_contact participant_contact_.;
+	format title_picker_complete title_picker_complete_.;
+	format title_picker_automat_v_0 title_picker_automat_v_0_.;
+	format suggested_title suggested_title_.;
+	format job_code job_code_.;
+	format mapper_1 mapper_1_.;
+	format mapper_2 mapper_2_.;
+	format crpwg_contact crpwg_contact_.;
+	format title_picker_results_complete title_picker_results_complete_.;
+	format calculations_complete calculations_complete_.;
+	run;

@@ -1,0 +1,1 @@
+content=record&format=csv&type=flat&exportSurveyFields=true&exportDataAccessGroups=Duke&token=API_TOKEN
